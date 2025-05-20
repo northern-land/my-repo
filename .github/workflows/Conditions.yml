@@ -12,3 +12,9 @@ jobs:
       - run: exit 1
       - run: echo "This proccess is Error!"
         if: ${{ failure() }}
+  skip-or-run:
+    if: ${{ github.actor == 'octocat' }}
+    runs-on: ubuntu-latest
+    steps:
+        - name: Amazing Script
+          run: echo "Hello"
