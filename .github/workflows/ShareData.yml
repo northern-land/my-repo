@@ -1,0 +1,8 @@
+name: share data
+on: push
+jobs:
+  share:
+    runs-on: ubuntu-latest
+    steps:
+      - run: export RESULT="hello"
+      - run: echo "${RESULT}" # step間で環境う変数を引き継げない
