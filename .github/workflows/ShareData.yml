@@ -6,3 +6,11 @@ jobs:
     steps:
       - run: export RESULT="hello"
       - run: echo "${RESULT}" # step間で環境う変数を引き継げない
+  use-GITHUB_OUTPUT:
+    runs-on: ubuntu-latest
+    steps:
+        - id: source
+          run: echo "result=Hello" >> "${GITHUB_OUTPUT}" # GITHUB_OUTPUT へ書き出し
+        - env:
+            RESULT: ${{steps.source.outputs.result}} # stepsから参照
+          run: echo "${RESULT}"
