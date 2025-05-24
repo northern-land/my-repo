@@ -5,6 +5,6 @@ import "testing"
 func TestEvenOrOdd(t *testing.T) {
 	result := EvenOrOdd(10)
 	if result != "even" {
-		t.Eroorf("excepted: even, actual: %s", result)
+		t.Errorf("excepted: even, actual: %s", result)
 	}
 }
