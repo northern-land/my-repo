@@ -1,0 +1,10 @@
+name: Naming
+on: push
+run-name: Rub by @${{github.actor}} # ワークフロー実行名の指定
+jobs:
+  print:
+    name: Super Useful job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Amazing Script  # ジョブ名の指定
+        run:  echo "Hello"
