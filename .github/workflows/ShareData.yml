@@ -14,3 +14,8 @@ jobs:
         - env:
             RESULT: ${{steps.source.outputs.result}} # stepsから参照
           run: echo "${RESULT}"
+  use-GITHUB_ENV:
+    runs-on: ubuntu-latest
+    steps:
+        - run: echo "RESULT=Hello" >> "${GITHUB_ENV}" # GITHUB_ENV へ書き出し
+        - run: echo "${RESULT}"
